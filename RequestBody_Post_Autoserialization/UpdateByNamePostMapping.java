@@ -26,14 +26,12 @@ public class UpdateByNamePostMapping {
         }
 
         if (MealExists != null) {
-            // Update the existing meal with the information from the updatedMeal
             MealExists.setName(updatedMeal.getName());
             MealExists.setDescription(updatedMeal.getDescription());
             MealExists.setPrice(updatedMeal.getPrice());
 
             return ResponseEntity.ok(MealExists);
         } else {
-            // Meal not found, you can handle this case accordingly (e.g., return a not found response)
             return null;
         }
     }
