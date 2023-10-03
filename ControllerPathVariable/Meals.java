@@ -6,9 +6,11 @@ import lombok.Data;
 public class Meals {
     String name;
     String description;
-    public Meals(String name, String description){
+    double price;
+    public Meals(String name, String description, double price){
         this.name = name;
         this.description =description;
+        this.price = price;
     }
 
 }

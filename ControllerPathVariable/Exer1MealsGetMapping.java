@@ -12,8 +12,8 @@ public class Exer1MealsGetMapping {
     @GetMapping ("/meals")
     public List meals(){
         List<Meals> meal = new ArrayList<>();
-        meal.add(new Meals("ugali", "stable food"));
-        meal.add(new Meals("Sweetpotatoes", "breakfast"));
+        meal.add(new Meals("ugali", "stable food", 50.00));
+        meal.add(new Meals("Sweetpotatoes", "breakfast", 45.00));
         return meal;
     }
 }

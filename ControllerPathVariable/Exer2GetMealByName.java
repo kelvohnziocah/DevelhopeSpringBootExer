@@ -14,15 +14,14 @@ import java.util.Optional;
 @RestController
 public class Exer2GetMealByName {
     private List<Meals> meal = Arrays.asList(
-            new Meals("ugali", "stable food"),
-            new Meals("Sweetpotatoes", "breakfast"),
-            new Meals("hotdog", "lunch meal")
+            new Meals("ugali", "stable food", 40.00),
+            new Meals("Sweetpotatoes", "breakfast", 50.80),
+            new Meals("hotdog", "lunch meal", 150.00)
     );
     @GetMapping("/meal/{name}")
     ResponseEntity<Meals> getMealByName(@PathVariable("name") String name){
         Optional<Meals> foundMeal = meal.stream()
-                .filter(meal -> meal.getName().equalsIgnoreCase(name))
-                .findFirst();
+                .filter(meal -> meal.getName().equalsIgnoreCase(name)).findFirst();
 
         if (foundMeal.isPresent()) {
             return ResponseEntity.ok(foundMeal.get());
